@@ -27,6 +27,7 @@ response = urllib.request.urlopen('https://trends.google.com/trends/api/widgetda
                                   '%22category%22%3A0%7D%7D&token=APP6_UEAAAAAYImvhqOaJVFgZ735pfOnpxY7ZkLFdv8k&tz=300')
 print(response.read())
 
+print("=========PYTRENDS=========")
 client = pytrends.request.TrendReq(hl='en-US', tz=360)
 client.build_payload(["Hello"])
 print(client.interest_over_time())
