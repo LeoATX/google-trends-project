@@ -1,4 +1,5 @@
 import urllib.request
+import pytrends.request
 
 # This gets the CSV file for League of Legends vs CSGO over the past year
 response = urllib.request.urlopen('https://trends.google.com/trends/api/widgetdata/multiline/csv?req=%7B%22time%22%3A'
@@ -25,3 +26,7 @@ response = urllib.request.urlopen('https://trends.google.com/trends/api/widgetda
                                   '%22requestOptions%22%3A%7B%22property%22%3A%22%22%2C%22backend%22%3A%22CM%22%2C'
                                   '%22category%22%3A0%7D%7D&token=APP6_UEAAAAAYImvhqOaJVFgZ735pfOnpxY7ZkLFdv8k&tz=300')
 print(response.read())
+
+client = pytrends.request.TrendReq(hl='en-US', tz=360)
+client.build_payload(["Hello"], cat=0, timeframe='today - 5-y', geo='', gprop='')
+client.interest_over_time()
