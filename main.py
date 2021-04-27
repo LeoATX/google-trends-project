@@ -28,5 +28,5 @@ response = urllib.request.urlopen('https://trends.google.com/trends/api/widgetda
 print(response.read())
 
 client = pytrends.request.TrendReq(hl='en-US', tz=360)
-client.build_payload(["Hello"], cat=0, timeframe='today - 5-y', geo='', gprop='')
-client.interest_over_time()
+client.build_payload(["Hello"])
+print(client.interest_over_time())
