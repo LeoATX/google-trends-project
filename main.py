@@ -1,9 +1,9 @@
-import urllib.request
 import urllib.error
-import pytrends.request
+import urllib.request
+# import pytrends.request
 
 try:
-    response = urllib.request.urlopen('https://trends.google.com/trends/explore?q=Coronavirus&geo=US')
+    response = urllib.request.urlopen('https://trends.google.com/trends/explore?q=%2Fm%2F04n3w2r&geo=US.json')
     print(response)
 except urllib.error.HTTPError:
     print(urllib.error.HTTPError)
