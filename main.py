@@ -8,8 +8,7 @@ try:
 except urllib.error.HTTPError:
     print(urllib.error.HTTPError)
 
+print("=========PYTRENDS=========")
 client = pytrends.request.TrendReq(hl='en-US', tz=360)
-client.build_payload(["Coronavirus"])
-data_frame_object = client.interest_over_time()
-csv = data_frame_object.to_csv()
-print(csv)
+client.build_payload(["Hello"])
+print(client.interest_over_time())
