@@ -84,8 +84,6 @@ print("Lets try the to_string function that outputs the polynomial currently bei
 print(nm.to_string())
 
 print("+++++++++++++leo+++++++")
-del NewtonsMethod
-import newtonsmethod # noqa
-object = newtonsmethod.NewtonsMethod([1, 0, -2])
+obj = NewtonsMethod([1, 0, -2])
 
-print(object.eval_poly(2))
+print(obj.eval_poly(2))
