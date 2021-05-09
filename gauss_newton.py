@@ -36,15 +36,13 @@ class GaussNewton:
 
         n = len(guess)
 
+        r = self.find_residuals(guess)  # residuals
+
         guess = numpy.array(guess)
 
         jac = self.jacobian(n)  # Jacobian
 
         jt = jac.transpose()  # transpose of Jacobian
-
-        r = self.find_residuals(guess)  # residuals
-
-        print(r)
 
         inv = numpy.linalg.inv(numpy.matmul(jt, jac)) #pseudoinverse
 

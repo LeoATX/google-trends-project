@@ -13,7 +13,7 @@ class NewtonsMethod:
         n = 0
 
         while n < len(self.coeff):
-            x_ans += (self.coeff[n] * (x ** (len(self.coeff) - n - 1)))
+            x_ans += (self.coeff[n] * (x ** n))
 
             n += 1
 
