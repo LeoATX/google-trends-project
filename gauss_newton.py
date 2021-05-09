@@ -1,6 +1,7 @@
 import numpy
 from newtonsmethod import NewtonsMethod
 
+
 class GaussNewton:
 
     def __init__(self, table):
@@ -32,7 +33,7 @@ class GaussNewton:
 
         return res
 
-    def Gauss_Newton(self, guess):
+    def gauss_newton(self, guess):
 
         n = len(guess)
 
@@ -44,18 +45,12 @@ class GaussNewton:
 
         jt = jac.transpose()  # transpose of Jacobian
 
-        inv = numpy.linalg.inv(numpy.matmul(jt, jac)) #pseudoinverse
+        inv = numpy.linalg.inv(numpy.matmul(jt, jac))  # pseudoinverse
 
-        mJ = numpy.matmul(inv, jt)
+        mj = numpy.matmul(inv, jt)
 
-        delta = numpy.matmul(mJ, r)  # change in beta
+        delta = numpy.matmul(mj, r)  # change in beta
 
         new_coeff = numpy.add(guess, delta)
 
         return new_coeff
-
-
-
-
-
-
