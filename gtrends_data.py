@@ -46,4 +46,8 @@ def get(keyword: str):
 
         list_values.append(row_list[1])
 
+    # Change it to numerical
+    for index in range(len(list_values) - 1):
+        list_values[index] = float(list_values[index])
+
     return list_values
