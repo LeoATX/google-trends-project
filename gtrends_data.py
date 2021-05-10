@@ -1,6 +1,8 @@
 import pytrends.request
 
 
+# Currently only takes one keyword
+# Could add optional "start_datetime: datetime, end_datetime: datetime"
 def get(keyword: str):
     client = pytrends.request.TrendReq(hl='en-US', tz=360)
     client.build_payload([keyword])
@@ -10,8 +12,10 @@ def get(keyword: str):
     fetched_csv = str(fetched_csv)
 
     # Create a list to iterate the csv
-    csv_iterable = list()
-    csv_iterable.append('')
+    csv_iterable = ['']
+
+    # Creates a list for final numerical output
+    list_values = []
 
     # Loop through the csv file and add every row into csv_iterable
     row_count = 0
@@ -26,7 +30,6 @@ def get(keyword: str):
     del csv_iterable[len(csv_iterable) - 1]
 
     # Loop through each row and grab the value from the middle
-    list_values = list()
     row_count = 0
     for row in csv_iterable:
         # Get rid of the first row
@@ -34,8 +37,7 @@ def get(keyword: str):
             row_count += 1
             continue
 
-        row_list = list()
-        row_list.append('')
+        row_list = ['']
         mini_list_count = 0
         for character in row:
             if character != ',':
