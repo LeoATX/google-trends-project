@@ -1,4 +1,5 @@
 import pytrends.request
+import requests
 
 
 # Currently only takes one keyword
@@ -53,3 +54,9 @@ def get(keyword: str):
         list_values[index] = float(list_values[index])
 
     return list_values
+
+
+url = 'https://trends.google.com/trends/explore?q=Coronavirus'
+headers = {'headers': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:88.0) Gecko/20100101 Firefox/88.0'}
+response = requests.Session().get(url=url, headers=headers)
+print(response.content)
